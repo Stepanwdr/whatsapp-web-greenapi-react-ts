@@ -1,0 +1,40 @@
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: initial;
+    background-color: var(--light-blue);
+    padding: 10px 15px 10px 5px;
+    border-left:1px solid #d1d7db;
+}
+.contactActions{
+    display:flex;
+}
+.icon path {
+    fill: var(--nav-icons-color);
+}
+.icon{
+    margin-left:15px;
+}
+.navBtn {
+    background: none !important;
+    border: none;
+    display:flex;
+    align-items:center;
+}
+
+.navBtn:hover {
+    background: none !important;
+}
+
+.avatarIcon path {
+    fill: var(--avatar-bg);
+}
+
+
+.avatarIcon{
+    margin-right:15px;
+}
+.userName{
+font-size:16px;
+}

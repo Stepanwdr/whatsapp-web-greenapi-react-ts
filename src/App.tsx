@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC ,useEffect} from 'react';
+import "./App.css"
+import { chatServices } from './api/chatServices';
+import Routing from './pages';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App:FC=()=> {
+
+
+const sendMessage=async()=>{
+  try{
+   const res= await chatServices.sendMessage({
+    chatId: "37498823987@c.us",
+    message: "Barev Styop Jan"
+   }) 
+       console.log(res)
+     }catch(e){
+    console.log(e)
+      }
+}
+  useEffect(()=>{ 
+     //sendMessage()
+    //getMyAccount()
+
+  },[])
+    return (
+      <div className="App">
+        <Routing />
     </div>
-  );
+    )
+  
 }
 
 export default App;

@@ -1,0 +1,1 @@
+export const navIconColor="#54656f"

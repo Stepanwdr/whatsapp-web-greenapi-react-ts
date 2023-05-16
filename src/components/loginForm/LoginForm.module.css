@@ -1,0 +1,23 @@
+.formHeader {
+  font-weight: 500;
+}
+
+.inputContainer {
+  width: calc(100% - 20px);
+  display: flex;
+  background-color: var(--light-blue);
+  align-items: center;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.loginInput {
+  padding: 10px 13px 10px 13px;
+  border-radius: 10px;
+  border: none;
+  background: white;
+  width: calc(100% - 10px);
+  height: 100%;
+  font-size: 16px;
+  margin-bottom: 15px;
+}

@@ -1,0 +1,33 @@
+.messageForm{
+margin-top:auto;
+}
+.inputContainer{
+    width: calc(100% - 20px);
+    display: flex;
+    background-color: var(--light-blue);
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+.messageInput{
+padding: 10px 13px 10px 13px;
+border-radius:10px;
+border: none;
+background:white;
+width: calc(100% - 10px);
+height: 100%;
+font-size: 16px;
+}
+.messageInput:focus{
+    border: none;
+    outline: none;
+}
+.sendBtn{
+border: none;
+cursor: pointer;
+background-color: var(--light-blue);
+padding: 10px;
+}
+.sendIcon path{
+    fill: var(--nav-icons-color);
+}
