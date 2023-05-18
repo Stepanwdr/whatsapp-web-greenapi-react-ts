@@ -6,7 +6,6 @@ const initialState: AuthState = {
     isAuth: false,
     error: '',
     isLoading: false,
-    succesText:'',
     user:{} as IUser
 }
 
@@ -17,7 +16,6 @@ export default function authReducer(state = initialState, action: AuthAction):Au
                 ...state,
                 isAuth: action.payload,
                 isLoading: false,
-                succesText:'',
                 error: ''
             }
         case AuthActionEnum.SET_IS_LOADING:
@@ -30,8 +28,6 @@ export default function authReducer(state = initialState, action: AuthAction):Au
                 ...state,
                 error: action.payload,
                 isLoading: false,
-                succesText:"You are successfuly logined"
-                
             }
         case AuthActionEnum.SET_USER:
             return {

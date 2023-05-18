@@ -1,0 +1,32 @@
+.welcomeScreen{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   width: 100%;
+   height: 100%;
+   background-color: var(--light-blue);
+   padding: 50px;
+}
+.logoContainer img{
+    width: 150px;
+}
+.welcomeTextContainer span{
+ font-size: 22px;
+}
+.welcomeTextContainer p{
+font-weight: 400;
+
+}
+.logoContainer span{
+ font-size: 28px;
+ color: var(--app-background-stripe);
+  margin-top: 20px;
+}
+.helpText{
+  line-height: 30px;
+text-align: center;
+}
+.helpText span{
+color: var(--app-background-stripe);
+}

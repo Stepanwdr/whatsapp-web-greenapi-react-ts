@@ -4,7 +4,7 @@ export interface ContactsState {
     contacts: IContact[],
     isLoading: boolean,
     error: string | null,
-    selectedContact:IContact | null
+    selectedContact:IContact
 }
 
 export enum ContactsActionEnum {

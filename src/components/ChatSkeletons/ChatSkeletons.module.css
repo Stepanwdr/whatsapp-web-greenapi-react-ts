@@ -1,0 +1,44 @@
+.skeletonsContainer {
+    display: flex;
+    flex-grow: initial;
+    width: 100%;
+    flex-direction: column;
+    padding: 50px;
+    padding-top: 25px;
+    height: 100vh;
+    
+}
+.navSkeleton{
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+.navSkeleton .avatar{
+min-width: 60px;
+min-height: 60px;
+margin-right: 20px;
+}
+.navSkeleton.rowSkeleton{
+    width: 100%;
+    height: 60px;
+}
+.footerSkeleton{
+    margin-top: 20px;
+    margin-bottom: auto;
+}
+.footerSkeleton .rowSkeleton{
+    height: 60px;
+    width: 100%;
+}
+.row {
+    margin-top: 20px;
+}
+.row:nth-child(even) {
+    margin-left: auto;
+}
+.row span{
+    border-radius: 11px;
+    display: block;
+    width: 210px;
+    height: 30px;
+}

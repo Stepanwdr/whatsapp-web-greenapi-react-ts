@@ -6,7 +6,6 @@ export interface AuthState{
 isAuth:boolean,
 error:string | null,
 isLoading:boolean,
-succesText:string,
 user:IUser
 }
 
@@ -17,12 +16,10 @@ export enum AuthActionEnum{
     SET_USER='SET_USER',
 }
 
-
 export interface setAuthAction{
     type:AuthActionEnum.SET_AUTH,
     payload:boolean
 }
-
 
 export interface setUserAction{
     type:AuthActionEnum.SET_USER,

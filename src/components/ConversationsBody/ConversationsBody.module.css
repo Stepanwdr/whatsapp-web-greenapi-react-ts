@@ -1,0 +1,5 @@
+.conversationBody{
+    max-height: 800px;
+    overflow-y: auto;
+    padding: 15px 63px 10px 63px;
+}

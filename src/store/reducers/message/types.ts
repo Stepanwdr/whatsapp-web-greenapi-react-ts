@@ -1,4 +1,3 @@
-import { IMessage } from "../../../model/IMessage";
 
 export interface MessageState{
     error:string | null,

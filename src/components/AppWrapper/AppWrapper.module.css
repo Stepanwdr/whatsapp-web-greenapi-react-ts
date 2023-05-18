@@ -1,0 +1,5 @@
+.wrapper{
+    height: 100vh;
+    background: linear-gradient(var(--app-background-stripe) 100px, #d9dbd6 100px);
+    padding: 19px;
+}

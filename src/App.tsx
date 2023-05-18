@@ -1,31 +1,12 @@
-import React, { FC ,useEffect} from 'react';
-import "./App.css"
-import { chatServices } from './api/chatServices';
+import { FC } from 'react';
 import Routing from './pages';
+import AppWrapper from './components/AppWrapper/AppWrapper';
 
 const App:FC=()=> {
-
-
-const sendMessage=async()=>{
-  try{
-   const res= await chatServices.sendMessage({
-    chatId: "37498823987@c.us",
-    message: "Barev Styop Jan"
-   }) 
-       console.log(res)
-     }catch(e){
-    console.log(e)
-      }
-}
-  useEffect(()=>{ 
-     //sendMessage()
-    //getMyAccount()
-
-  },[])
     return (
-      <div className="App">
+      <AppWrapper>
         <Routing />
-    </div>
+       </AppWrapper>
     )
   
 }

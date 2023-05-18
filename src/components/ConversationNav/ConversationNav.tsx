@@ -12,9 +12,9 @@ const ConversationNav: FC<ConversationNav> = ({phone}) => {
         <AccountCircleIcon  sx={{fontSize:50}} className={`${styles.icon} ${styles.avatarIcon}`} />
         <span className={styles.userName}>{phone}</span>    
       </button>
-      <button className={styles.navBtn}>
+     { /*<button className={styles.navBtn}>
         <InfoIcon sx={{fontSize:30}} className={styles.icon} />
-      </button>
+      </button>*/}
     </div>
   )
 }

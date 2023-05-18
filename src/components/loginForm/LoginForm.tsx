@@ -1,21 +1,29 @@
-import { FC, useState } from "react";
+import { FC, useState,useEffect } from "react";
 import styles from './LoginForm.module.css'
 import Button from '@mui/material/Button';
-
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useActions } from "../../hooks/useActions";
-import { initialContact } from "../../consts/initialContact";
 import { CircularProgress } from "@mui/material";
+import Storage from "../../utils/Storage";
 
 const LoginForm: FC = () => {
     const [idInstanceValue, setIdInstanceValue] = useState('')
     const [apiTokenInstanceValue, setApiTokenInstanceValue] = useState('')
-    const {error,isLoading}=useTypedSelector(state=>state.auth)
+    const {isLoading}=useTypedSelector(state=>state.auth)
     const {fetchLogin}=useActions()
+   
     const login = () => {
        if(!idInstanceValue || !apiTokenInstanceValue)return 
        fetchLogin(+idInstanceValue,apiTokenInstanceValue)
     }
+
+    useEffect(()=>{
+        const user=Storage.get('user')
+        if(user){
+            setApiTokenInstanceValue(user.apiTokenInstanceValue)
+            setIdInstanceValue(user.idInstanceValue)
+        }
+    },[])
     return (
         <div className={styles.formCotainer}>
             <h4 className={styles.formHeader}>
@@ -28,6 +36,7 @@ const LoginForm: FC = () => {
                     type="text"
                     placeholder="IdInstance"
                     value={idInstanceValue}
+                    required={true}
                     onChange={(ev)=>setIdInstanceValue(ev?.target.value)}/>
                 </div>
                 <div className={styles.inputContiner}>
@@ -35,6 +44,7 @@ const LoginForm: FC = () => {
                     className={styles.loginInput}
                      type="text"
                      placeholder="ApiTokenInstance"
+                     required={true}
                      value={apiTokenInstanceValue}
                      onChange={(ev)=>setApiTokenInstanceValue(ev?.target.value)}/>
                 </div>

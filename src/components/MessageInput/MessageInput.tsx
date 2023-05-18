@@ -1,7 +1,6 @@
 import { FC } from "react";
 import styles from './MessageInput.module.css'
 import SendIcon from '@mui/icons-material/Send';
-import { navIconColor } from "../../consts/colors";
 interface MessageInputProps{
     value:string,
     setValue:(value:string)=>void,
@@ -13,7 +12,7 @@ const MessageInput:FC<MessageInputProps> = ({
     sendMessage
 }) => {
     return (
-        <form className={styles.messageForm}>
+        <form className={styles.messageForm} onSubmit={sendMessage}>
             <div className={styles.inputContainer}>
                 <input
                 className={styles.messageInput}

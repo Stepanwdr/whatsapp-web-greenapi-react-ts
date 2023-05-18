@@ -1,9 +1,13 @@
 .formHeader {
   font-weight: 500;
 }
-
+.formCotainer{
+  background-color: #ffffffd3;
+  border-radius: 20px;
+  min-width: 320px;
+  padding: 20px;
+}
 .inputContainer {
-  width: calc(100% - 20px);
   display: flex;
   background-color: var(--light-blue);
   align-items: center;
@@ -14,10 +18,12 @@
 .loginInput {
   padding: 10px 13px 10px 13px;
   border-radius: 10px;
-  border: none;
+  border: 1px solid var(--app-background-stripe);
   background: white;
-  width: calc(100% - 10px);
-  height: 100%;
   font-size: 16px;
   margin-bottom: 15px;
+  width: 100%;
+}
+.loginInput:focus{
+  outline: none;
 }

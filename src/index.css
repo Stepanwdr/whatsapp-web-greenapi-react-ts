@@ -7,6 +7,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
 }
+ body *{
+  box-sizing: border-box;
+ }
+  
 button{
   cursor: pointer;
 }
@@ -17,6 +21,6 @@ code {
 :root{
   --app-background-stripe:#00a884;
   --light-blue:#f0f2f5;
-  --nav-icons-color:#54656f;
+  --nav-icons-color:#666666;
   --avatar-bg:#dfe5e7
  }

@@ -3,6 +3,7 @@
     padding:8px;
     background-color: white;
     align-items: center;
+    border-bottom: 1px solid #d1d7db;
 }
 .contact:hover {
     cursor: pointer;
@@ -24,6 +25,7 @@ margin-right: 15px;
 .contact .details {
     display: flex;
     align-items: center;
+  
 }
 
 .contact .name {
@@ -32,4 +34,7 @@ margin-right: 15px;
 
 .contact .status {
     color: rgb(100, 100, 100);
+}
+.selected{
+    background-color: var(--light-blue);
 }

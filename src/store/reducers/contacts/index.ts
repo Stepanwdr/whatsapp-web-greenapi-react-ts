@@ -6,15 +6,12 @@ import { ConatctsAction, ContactsActionEnum, ContactsState } from "./types"
 
 const initialState: ContactsState = {
   contacts: [
-    {name:"Stepan Manukyan",phone:'37498823987@s.us'}
+    {name:"Stepan Manukyan",chatId:'37498823987@c.us'}
   ] as IContact[],
   isLoading: false,
   error: '',
   selectedContact:{} as IContact
 }
-
-
-
 const contactsReducer = (state = initialState, action: ConatctsAction): ContactsState => {
   switch (action.type) {
     case ContactsActionEnum.SET_CONTACTS:

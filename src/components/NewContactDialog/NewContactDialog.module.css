@@ -1,0 +1,9 @@
+.dialogContainer{
+
+}
+.phoneInput:hover{
+   outline: var(--app-background-stripe)
+}
+.phoneInput .MuiInputBase-root:focus{
+    outline: var(--app-background-stripe)
+}

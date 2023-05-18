@@ -12,7 +12,6 @@ const initialState = {
         case MessageActionEnum.SEND_MESSAGE_REQUEST:
             return {
                 ...state,
-                isLoading: false,
                 error: ''
             }
         case MessageActionEnum.SEND_MESSAGE_SUCCESS:
@@ -25,6 +24,16 @@ const initialState = {
                 ...state,
                 error: action.payload,
             }
+            case MessageActionEnum.SET_MESSAGES:
+                return{
+                    ...state,
+                    messages:action.payload
+                }
+               case MessageActionEnum.SET_IS_LOADING:
+                return{
+                    ...state,
+                    isLoading:action.payload
+                }
         default:
             return state
     }
