@@ -1,14 +1,14 @@
 import { FC, useState} from "react";
 import styles from './Conversations.module.css'
-import MessageInput from "../MessageInput/MessageInput";
-import ConversationNav from "../ConversationNav/ConversationNav";
+import MessageInput from "./MessageInput";
+import ConversationNav from "./ConversationNav/ConversationNav";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useActions } from "../../hooks/useActions";
 import { IMessage } from "../../model/IMessage";
 import ChatSkeletons from "../ChatSkeletons/ChatSkeletons";
 import chatIdToPhone from "../../utils/chatIdToPhone";
 import WelcomeScreen from "../WelcomeScreen/WelcomeScreen";
-import ConversationsBody from "../ConversationsBody/ConversationsBody";
+import ConversationsBody from "./ConversationsBody/ConversationsBody";
 interface ConversationsProps {
     messages: IMessage[],
     isLoading: boolean

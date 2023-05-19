@@ -2,9 +2,9 @@ import { Dialog, Button,DialogTitle, DialogContent, DialogActions, CircularProgr
 import { FC, useState } from "react"
 import { toast } from 'react-toastify'
 import { MuiTelInput, matchIsValidTel } from 'mui-tel-input'
-import { useTypedSelector } from "../../hooks/useTypedSelector"
-import { useActions } from "../../hooks/useActions"
-import phoneToChatId from "../../utils/phoneToChatId"
+import { useTypedSelector } from "../../../hooks/useTypedSelector"
+import { useActions } from "../../../hooks/useActions"
+import phoneToChatId from "../../../utils/phoneToChatId"
 import styles from './NewContactDialog.module.css'
 interface NewContactDialogProps {
   isOpen: boolean,

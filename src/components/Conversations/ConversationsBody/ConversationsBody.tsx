@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { IMessage } from "../../model/IMessage";
+import { IMessage } from "../../../model/IMessage";
 import styles from './ConversationsBody.module.css'
 import Message from "../Message/Message";
 interface ConversationsBodyProps {

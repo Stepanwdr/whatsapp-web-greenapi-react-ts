@@ -1,7 +1,6 @@
 import { Dispatch } from "redux";
 import { MessageAction, MessageActionEnum, SetMessageAction, SetErrorAction, SetIsLoadingAction } from "../reducers/message/types";
 import { chatServices } from "../../api/chatServices";
-import phoneToChatId from "../../utils/phoneToChatId";
 
 export const setMessages = (payload: any): SetMessageAction => ({ type: MessageActionEnum.SET_MESSAGES, payload })
 export const setError = (payload: string): SetErrorAction => ({ type: MessageActionEnum.SET_ERROR, payload })
@@ -11,7 +10,7 @@ export const fetchChatHistory = (chatId: string) => {
     try {
       dispatch(setIsLoading(true))
       dispatch(setMessages([]))
-      const res = await chatServices.getChatHistory({chatId})
+      const res = await chatServices.getChatHistory({ chatId })
       dispatch(setMessages(res.data))
       dispatch(setIsLoading(false))
     } catch (e: any) {
@@ -28,6 +27,19 @@ export const fetchSendMessage = (chatId: string, message: string) => {
       dispatch({ type: MessageActionEnum.SEND_MESSAGE_SUCCESS, payload: res.data.idMessage })
     } catch (e: any) {
       dispatch({ type: MessageActionEnum.SEND_MESSAGE_FAIL, payload: e.message })
+    }
+  }
+}
+export const fetchGetNotification = () => {
+  return async (dispatch: Dispatch<MessageAction>) => {
+    try {
+      dispatch(setIsLoading(true))
+      const res = await chatServices.getNotification()
+      if (res.data != null) {
+        dispatch(setMessages(res.data))
+      }
+    } catch (e: any) {
+      setError(e.message)
     }
   }
 }

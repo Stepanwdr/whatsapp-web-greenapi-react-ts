@@ -1,10 +1,10 @@
 import { FC } from "react";
 import styles from './Contact.module.css'
-import { IContact } from "../../model/IContact";
+import { IContact } from "../../../model/IContact";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { useTypedSelector } from "../../hooks/useTypedSelector";
-import { useActions } from "../../hooks/useActions";
-import chatIdToPhone from "../../utils/chatIdToPhone";
+import { useTypedSelector } from "../../../hooks/useTypedSelector";
+import { useActions } from "../../../hooks/useActions";
+import chatIdToPhone from "../../../utils/chatIdToPhone";
 interface ContactProps{
     contact:IContact
 }
