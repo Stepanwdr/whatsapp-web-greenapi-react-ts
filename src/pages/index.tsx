@@ -11,21 +11,15 @@ const Routing = () => {
             {
                 isAuth
                     ?
-                    <>
-                    { privateRoutes.map(({ path, element }) => (
+                     privateRoutes.map(({ path, element }) => (
                             <Route path={path} element={element} />
-                    ))}
-                    <Route path={'*'} element={<Chat/>} />
-                    </>
+                    ))
                     :
-                    <>
-                      {publicRoutes.map(({ path, element }) => (
+            
+                      publicRoutes.map(({ path, element }) => (
                          <Route path={path} element={element} />
                                        
-                    ))}
-                    <Route path={'*'} element={<Login/>} />
-                    </>
-
+                    ))
             }
         </Routes>
     )

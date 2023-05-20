@@ -14,7 +14,7 @@ const ContactsList:FC<ContactsListProps>=({contacts})=>{
    const {logout,fetchGetNotification}=useActions()
 
    const onNotificationClick=()=>{
-    fetchGetNotification()
+
    }
    const logOut=()=>{
     logout()

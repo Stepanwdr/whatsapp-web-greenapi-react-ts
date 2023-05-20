@@ -1,4 +1,4 @@
-import { AxiosPromise, AxiosResponse } from "axios";
+import axios, { AxiosPromise, AxiosResponse } from "axios";
 import { axiosInstance } from ".";
 import Storage from "../utils/Storage";
 
@@ -25,6 +25,7 @@ export class chatServices {
   static async getNotification(): Promise<AxiosPromise<any>> {
     const user = Storage.get('user')
     return await axiosInstance(`waInstance${user.idInstance}/ReceiveNotification/${user.apiTokenInstance}`)
+
   }
   static async deleteNotification(receiptId: number):Promise<AxiosPromise<any>> {
     const user = Storage.get('user')

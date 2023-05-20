@@ -6,15 +6,15 @@ export interface MessageState{
     currentConversation:{},
     newMessages:[]
 }
-export enum MessageActionEnum{
-    SET_MESSAGES='SET_MESSAGES',
-    SEND_MESSAGE_REQUEST='SEND_MESSAGE_REQUEST',
-    SEND_MESSAGE_SUCCESS='SEND_MESSAGE_SUCCESS',
-    SEND_MESSAGE_FAIL='SEND_MESSAGE_FAIL',
-    SET_IS_LOADING='SET_IS_LOADING',
-    SET_ERROR='SET_ERROR',
-    SET_CURRENT_CONVERSATION="SET_CURRENT_CONVERSATION",
-    SET_NEW_MESSAGES='SET_NEW_MESSAGES'
+export enum MessageActionEnum {
+    SET_MESSAGES = 'SET_MESSAGES',
+    SEND_MESSAGE_REQUEST = 'SEND_MESSAGE_REQUEST',
+    SEND_MESSAGE_SUCCESS = 'SEND_MESSAGE_SUCCESS',
+    SEND_MESSAGE_FAIL = 'SEND_MESSAGE_FAIL',
+    SET_IS_LOADING = 'SET_IS_LOADING',
+    SET_ERROR = 'SET_ERROR',
+    SET_CURRENT_CONVERSATION = "SET_CURRENT_CONVERSATION",
+    SET_NEW_MESSAGE = "SET_NEW_MESSAGE"
 }
 export interface SendMessageRequestAction{
     type:MessageActionEnum.SEND_MESSAGE_REQUEST,
@@ -43,8 +43,8 @@ export interface SendMessageRequestAction{
     type: MessageActionEnum.SET_IS_LOADING,
     payload:boolean
   } 
-  export interface SetNewMessagesAction{
-    type: MessageActionEnum.SET_NEW_MESSAGES,
+  export interface SetNewMessageAction{
+    type: MessageActionEnum.SET_NEW_MESSAGE,
     payload:any
   }
 export type MessageAction =  SendMessageRequestAction | 
@@ -54,4 +54,4 @@ export type MessageAction =  SendMessageRequestAction |
                              SetCurrentConversationAction|
                              SetErrorAction|
                              SetIsLoadingAction |
-                             SetNewMessagesAction
+                             SetNewMessageAction

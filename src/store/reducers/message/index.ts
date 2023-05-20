@@ -35,10 +35,11 @@ export default function messageReducer(state = initialState, action: MessageActi
                 ...state,
                 isLoading: action.payload
             }
-        case MessageActionEnum.SET_NEW_MESSAGES:
+        case MessageActionEnum.SET_NEW_MESSAGE:
+            console.log(action.payload,'action.payload')
             return {
                 ...state,
-                newMessages: action.payload
+                messages:[...state.messages,action.payload]
             }
         default:
             return state

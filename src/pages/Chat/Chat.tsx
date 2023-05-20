@@ -1,9 +1,10 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useEffect } from "react";
 import Conversations from "../../components/Conversations/Conversations";
 import styles from './Chat.module.css'
 import ContactsList from "../../components/ContactsList/ContactsList";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useActions } from "../../hooks/useActions";
+import { fetchGetNotification } from "../../store/action-creators/message";
 
 const Chat: FC = () => {
   const { contacts, selectedContact } = useTypedSelector(state => state.contacts)

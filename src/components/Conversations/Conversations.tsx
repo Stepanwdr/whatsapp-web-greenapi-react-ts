@@ -1,4 +1,4 @@
-import { FC, useState} from "react";
+import { FC, useState,useEffect} from "react";
 import styles from './Conversations.module.css'
 import MessageInput from "./MessageInput";
 import ConversationNav from "./ConversationNav/ConversationNav";
@@ -25,24 +25,23 @@ const newMessage=(chatId:string,text:string)=>{
     }
 }
 const Conversations: FC<ConversationsProps> = ({ messages, isLoading }) => {
-    console.log(messages,isLoading)
     const [textMessageValue, setTextMessageValue] = useState('')
-    const { fetchSendMessage, setMessages } = useActions()
+    const { fetchSendMessage, setMessages ,fetchGetNotification} = useActions()
     const { selectedContact } = useTypedSelector(state => state.contacts)
     const sendMessage = (ev: React.SyntheticEvent) => {
         ev.preventDefault()
         if(!textMessageValue)return
-        setMessages([...messages, newMessage(selectedContact.chatId,textMessageValue)])
           if (selectedContact?.chatId) {
+           setMessages([...messages,newMessage(selectedContact?.chatId,textMessageValue)])
             fetchSendMessage(selectedContact.chatId, textMessageValue)
         }
         setTextMessageValue('')
     }
-  
+    
+
     if (isLoading) {
         return (<ChatSkeletons />)
     }
-    
     return (<div className={styles.conversationSection}>
         {selectedContact?.chatId ?
             <>

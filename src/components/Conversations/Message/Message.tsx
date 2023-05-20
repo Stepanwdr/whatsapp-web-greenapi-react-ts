@@ -3,7 +3,7 @@ import styles from './Message.module.css'
 import moment from "moment";
 
 interface MessageProps {
-  key: any
+  key: number
   message: string
   theirs: boolean,
   timestamp: number,
@@ -12,9 +12,13 @@ const getClassName = (theirs: boolean) => {
   return theirs ? styles.messageTheirs : styles.messageUs
 }
 const getTimestamp = (timestamp: number) => {
-  return moment(timestamp).format('h:mm')
+  return moment(timestamp).local().format('h:mm')
 }
-const Message: FC<MessageProps> = ({ key, message, theirs, timestamp }) => {
+
+const Message: FC<MessageProps> = ({ key,message, theirs, timestamp }) => {
+   if(!message){
+    return null
+   }
   return <div
     key={key}
     className={`${styles.messageContainer} ${getClassName(theirs)}`}>
@@ -25,3 +29,4 @@ const Message: FC<MessageProps> = ({ key, message, theirs, timestamp }) => {
   </div>
 }
 export default Message
+
