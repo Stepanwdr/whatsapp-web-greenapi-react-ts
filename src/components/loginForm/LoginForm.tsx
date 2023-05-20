@@ -5,7 +5,7 @@ import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useActions } from "../../hooks/useActions";
 import { CircularProgress } from "@mui/material";
 import Storage from "../../utils/Storage";
-import { setWelcome } from "../../utils/setWelcome";
+
 
 const LoginForm: FC = () => {
     const [idInstanceValue, setIdInstanceValue] = useState('')
@@ -23,7 +23,7 @@ const LoginForm: FC = () => {
         if(user){
             setApiTokenInstanceValue(user.apiTokenInstanceValue)
             setIdInstanceValue(user.idInstanceValue)
-            setWelcome(user)
+            
         }
     },[])
     return (

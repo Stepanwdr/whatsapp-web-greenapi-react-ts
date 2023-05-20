@@ -4,6 +4,7 @@ import { AuthAction, AuthActionEnum, setAuthAction, setErrorAction, setIsLoading
 import Storage from "../../utils/Storage";
 import { authServices } from "../../api/authServices";
 import { toast } from "react-toastify";
+import { setWelcome } from "../../utils/setWelcome";
 export const setAuth = (payload: boolean): setAuthAction => ({ type: AuthActionEnum.SET_AUTH, payload })
 export const setError = (payload: string): setErrorAction => ({ type: AuthActionEnum.SET_ERROR, payload })
 export const setUser = (payload: IUser): setUserAction => ({ type: AuthActionEnum.SET_USER, payload })
@@ -24,6 +25,7 @@ export const fetchLogin = (idInstance: number, apiTokenInstance: string) => {
                 dispatch(setAuth(true))
                 dispatch(setUser(data))
                 toast(`You are logined successfuly`)
+                setWelcome()
             } else {
                 toast(`Account is ${res.data.stateInstance}`)
             }

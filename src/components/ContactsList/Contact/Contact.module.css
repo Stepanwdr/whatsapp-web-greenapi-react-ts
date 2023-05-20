@@ -22,9 +22,8 @@
 margin-right: 15px;
 
 }
-.contact .details {
-    display: flex;
-    align-items: center;
+.contact .details span {
+  display:block
   
 }
 .details .description{
