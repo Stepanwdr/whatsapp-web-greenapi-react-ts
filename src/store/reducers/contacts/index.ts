@@ -6,7 +6,7 @@ import { ConatctsAction, ContactsActionEnum, ContactsState } from "./types"
 
 const initialState: ContactsState = {
   contacts: [
-    {name:"Stepan Manukyan",chatId:'37498823987@c.us'}
+    {name:"Stepan Manukyan",chatId:'37498823987@c.us',description:"I'm your first contact,ask me questions"}
   ] as IContact[],
   isLoading: false,
   error: '',

@@ -50,7 +50,7 @@ export const fetchGetNotification = () => {
         }
         const delRes = await chatServices.deleteNotification(receiptId)
         if (delRes.data.result) {
-          if (!res.data?.body?.sendByApi) {
+          if (payload.textMessage) {
             dispatch({ type: MessageActionEnum.SET_NEW_MESSAGE, payload })
           }
         }

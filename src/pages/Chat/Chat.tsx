@@ -4,7 +4,6 @@ import styles from './Chat.module.css'
 import ContactsList from "../../components/ContactsList/ContactsList";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useActions } from "../../hooks/useActions";
-import { fetchGetNotification } from "../../store/action-creators/message";
 
 const Chat: FC = () => {
   const { contacts, selectedContact } = useTypedSelector(state => state.contacts)

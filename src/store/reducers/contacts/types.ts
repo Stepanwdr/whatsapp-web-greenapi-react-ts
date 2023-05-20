@@ -14,7 +14,8 @@ export enum ContactsActionEnum {
     ADD_CONTACT_FAIL = 'ADD_CONTACT_SUCCESS',
     SET_IS_LOADING = 'SET_IS_LOADING',
     SET_ERROR = 'SET_ERROR',
-    SET_SELECTED_CONTACT='SET_SELECTED_CONTACT'
+    SET_SELECTED_CONTACT='SET_SELECTED_CONTACT',
+    DELETE_CONTACT='DELETE_CONTACT_'
 }
 
 export interface SetContactsAction {
@@ -46,6 +47,10 @@ export interface setErrorAction {
 export interface setSelectedContactAction{
     type: ContactsActionEnum.SET_SELECTED_CONTACT,
     payload: IContact
+}
+export interface deleteContactAction{
+    type: ContactsActionEnum.DELETE_CONTACT,
+    payload: string
 }
 export type ConatctsAction =
     SetContactsAction |

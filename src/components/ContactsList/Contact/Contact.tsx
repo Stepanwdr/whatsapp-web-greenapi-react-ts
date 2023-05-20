@@ -16,10 +16,12 @@ interface ContactProps{
     }
     return (
       <div onClick={() => onClickOnContact(contact)} className={`${styles.contact}  ${selectedContact?.chatId===contact.chatId && styles.selected}`}>
-        <div className={styles.details}>
+        
            <AccountCircleIcon sx={{fontSize:60}} className={`${styles.iconClickable} ${styles.avatarIcon}`}/>
-          <div>
-          <span className={styles.name}>{contact.name ? contact.name : chatIdToPhone(contact.chatId)}</span>
+           <div className={styles.details}>
+           <span className={styles.name}>{contact.name ? contact.name : chatIdToPhone(contact.chatId)}</span>
+           {contact.description && <span className={styles.description}>{contact.description}</span>}
+           <div>
           </div>
         </div>
       </div>

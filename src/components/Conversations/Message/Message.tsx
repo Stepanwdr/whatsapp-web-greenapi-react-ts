@@ -16,9 +16,7 @@ const getTimestamp = (timestamp: number) => {
 }
 
 const Message: FC<MessageProps> = ({ key,message, theirs, timestamp }) => {
-   if(!message){
-    return null
-   }
+
   return <div
     key={key}
     className={`${styles.messageContainer} ${getClassName(theirs)}`}>
